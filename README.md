@@ -1,5 +1,7 @@
 # backend
 
+[![Build Status](https://travis-ci.org/comiko-app/backend.svg?branch=master)](https://travis-ci.org/comiko-app/backend)
+
 A library for Dart developers. It is awesome.
 
 ## Usage
