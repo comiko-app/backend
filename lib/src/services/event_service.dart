@@ -11,8 +11,8 @@ int _orderEventByPrice(final Event a, final Event b) =>
     a.price?.compareTo(b.price) ?? 0;
 
 abstract class EventService implements BaseService<Event> {
-  static const Map<SortingCriteria, Comparator> _sortComparators =
-      const <SortingCriteria, Comparator>{
+  static const Map<SortingCriteria, Comparator<Event>> _sortComparators =
+      const {
     SortingCriteria.date: _orderEventByDate,
     SortingCriteria.distance: _orderEventByDistance,
     SortingCriteria.price: _orderEventByPrice
