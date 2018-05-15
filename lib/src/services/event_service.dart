@@ -11,8 +11,8 @@ int _orderEventByPrice(final Event a, final Event b) =>
     a.price?.compareTo(b.price) ?? 0;
 
 abstract class EventService implements BaseService<Event> {
-  static const Map<SortingCriteria, Comparator> _sortComparators =
-      const <SortingCriteria, Comparator>{
+  static const Map<SortingCriteria, Comparator<Event>> _sortComparators =
+      const {
     SortingCriteria.date: _orderEventByDate,
     SortingCriteria.distance: _orderEventByDistance,
     SortingCriteria.price: _orderEventByPrice
@@ -71,7 +71,7 @@ abstract class EventService implements BaseService<Event> {
 class JsonEventService extends EventService {
   List<Event> _events = <Event>[];
 
-  init(List<Map<String, dynamic>> eventJson) {
+  init(List<dynamic> eventJson) {
     _events = eventJson.map((e) => new Event.fromJson(e)).toList();
   }
 
