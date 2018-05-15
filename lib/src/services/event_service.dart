@@ -71,7 +71,7 @@ abstract class EventService implements BaseService<Event> {
 class JsonEventService extends EventService {
   List<Event> _events = <Event>[];
 
-  init(List<Map<String, dynamic>> eventJson) {
+  init(List<dynamic> eventJson) {
     _events = eventJson.map((e) => new Event.fromJson(e)).toList();
   }
 
